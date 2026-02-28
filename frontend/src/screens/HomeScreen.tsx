@@ -1,5 +1,5 @@
 import { useCallback, useRef } from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useFocusEffect } from '@react-navigation/native';
@@ -11,6 +11,7 @@ import StreakCard from '../components/home/StreakCard';
 import RateTodayButton from '../components/home/RateTodayButton';
 import TodayRatings from '../components/home/TodayRatings';
 import SevenDayPreview from '../components/home/SevenDayPreview';
+import WelcomeHome from '../components/home/WelcomeHome';
 
 type Nav = NativeStackNavigationProp<AppStackParamList>;
 
@@ -37,8 +38,12 @@ export default function HomeScreen() {
         paddingTop: insets.top + 16,
       }}
     >
-      <Text className="text-content text-[34px] font-bold">Out of 10</Text>
-      <StreakCard streak={mockStreak} />
+      <View className="flex-row gap-3" style={{ height: 110 }}>
+        <WelcomeHome />
+        <View style={{ width: '30%' }}>
+          <StreakCard streak={mockStreak} />
+        </View>
+      </View>
       {todayRatings ? (
         <TodayRatings daily={todayRatings} categories={categories} />
       ) : (
