@@ -11,7 +11,6 @@ import (
 )
 
 const version = "0.1.0"
-const API_BASE = "192.168.86.30"
 
 func main() {
 	godotenv.Load()
@@ -53,5 +52,5 @@ func main() {
 	}
 
 	log.Printf("Server starting on :%s", port)
-	r.Run(API_BASE + ":" + port)
+	r.Run(":" + port)
 }

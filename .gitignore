@@ -1,7 +1,6 @@
 # Go
 /backend/tmp/
 /backend/out-of-10
-.air.toml
 
 # React Native / Expo
 /frontend/node_modules/

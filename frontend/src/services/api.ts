@@ -1,4 +1,5 @@
-const BASE_URL = 'http://192.168.86.30:8080/api/v1';
+const BASE_URL =
+  process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:8080/api/v1';
 
 type AuthResponse = {
   token: string;
